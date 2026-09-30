@@ -1,12 +1,16 @@
 @extends('layouts.app')
-@section('titulo', 'Iniciar sesión')
+@section('titulo', 'Crear cuenta')
 
 @section('content')
 <div class="card">
-  <h2>Iniciar sesión</h2>
+  <h2>Crear cuenta</h2>
 
-  <form method="POST" action="{{ route('login.post') }}">
+  <form method="POST" action="{{ route('registro.post') }}">
     @csrf
+    <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" name="name" value="{{ old('name') }}" required>
+    </div>
     <div class="form-group">
       <label>Correo</label>
       <input type="email" name="email" value="{{ old('email') }}" required>
@@ -15,7 +19,7 @@
       <label>Contraseña</label>
       <input type="password" name="password" required>
     </div>
-    <button class="primary" type="submit">Entrar</button>
+    <button class="primary" type="submit">Crear cuenta</button>
   </form>
 
   @error('email')
@@ -23,7 +27,7 @@
   @enderror
 
   <p style="margin-top:1rem">
-    <a href="{{ route('registro') }}">¿No tienes cuenta? Regístrate</a>
+    <a href="{{ route('login') }}">¿Ya tienes cuenta? Inicia sesión</a>
   </p>
 </div>
 @endsection

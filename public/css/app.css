@@ -1,0 +1,107 @@
+:root {
+  --tinta: #1f2a24;
+  --hueso: #f6f3ec;
+  --musgo: #3c5c48;
+  --musgo-osc: #2a4433;
+  --mostaza: #c8912b;
+  --linea: #dcd6c6;
+  --error: #b3432b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  background: var(--hueso);
+  color: var(--tinta);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--linea);
+}
+
+.topbar h1 { font-size: 1.3rem; margin: 0; letter-spacing: 0.02em; }
+
+.topbar nav a, .topbar nav button {
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--musgo-osc);
+  text-decoration: none;
+  margin-left: 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+main { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+
+.card {
+  background: white;
+  border: 1px solid var(--linea);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-group { margin-bottom: 1rem; }
+
+label { display: block; font-size: 0.85rem; margin-bottom: 0.35rem; color: var(--musgo-osc); }
+
+input, select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--linea);
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+button.primary {
+  background: var(--musgo);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button.primary:hover { background: var(--musgo-osc); }
+
+.error { color: var(--error); font-size: 0.9rem; margin-top: 0.5rem; }
+
+.producto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--linea);
+  padding: 0.9rem 0;
+}
+
+.producto:last-child { border-bottom: none; }
+
+.precio { color: var(--mostaza); font-weight: 600; }
+
+.cantidad-input { width: 60px; display: inline-block; margin-right: 0.6rem; }
+
+.total-linea {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 2px solid var(--tinta);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+table { width: 100%; border-collapse: collapse; }
+
+th, td { text-align: left; padding: 0.6rem 0.4rem; border-bottom: 1px solid var(--linea); font-size: 0.95rem; }
+
+th { color: var(--musgo-osc); font-weight: 600; }
