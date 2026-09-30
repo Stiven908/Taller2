@@ -9,9 +9,7 @@ class ProductoWebController extends Controller
 {
     public function index(Request $request)
     {
-        if (!$request->user()->isAdmin()) {
-            abort(403);
-        }
+        
 
         $productos = Producto::orderBy('nombre')->get();
 
@@ -20,18 +18,14 @@ class ProductoWebController extends Controller
 
     public function create(Request $request)
     {
-        if (!$request->user()->isAdmin()) {
-            abort(403);
-        }
+        
 
         return view('admin.productos_crear');
     }
 
     public function store(Request $request)
     {
-        if (!$request->user()->isAdmin()) {
-            abort(403);
-        }
+        
 
         $validated = $request->validate([
             'nombre' => 'required|string|max:255',
